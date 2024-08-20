@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { OrbitProgress } from "react-loading-indicators";
+import { OrbitProgress, BlinkBlur } from "react-loading-indicators";
 
 export default function Home() {
   const [search, setSearch] = useState<string>("");
@@ -60,13 +60,7 @@ export default function Home() {
       <section className="flex items-center flex-wrap w-full mx-auto gap-3 justify-center">
         {isLoading ? (
           <div className="w-full flex items-center justify-center">
-            <OrbitProgress
-              variant="spokes"
-              color="#1f2a37"
-              size="medium"
-              text=""
-              textColor=""
-            />
+            <BlinkBlur color="#1f2a37" size="medium" text="" textColor="" />
           </div>
         ) : (
           data.results?.length > 0 &&
